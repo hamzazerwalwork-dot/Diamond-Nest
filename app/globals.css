@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;500;600;700;900&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --midnight: #0A0F1E;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-pale: #F5E6B8;
+  --ivory: #F8F4EC;
+  --text-light: #E8E4DC;
+  --text-muted: #9A8F7A;
+  --nav-h: 70px;
+}
+
+html { scroll-behavior: smooth; direction: rtl; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--midnight);
+  color: var(--text-light);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--midnight); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── Animations ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%       { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Utilities ── */
+.gold-text {
+  background: linear-gradient(135deg, #C9A84C, #F5E6B8, #C9A84C, #E8C96A);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+.amiri  { font-family: 'Amiri', serif; }
+.glass  {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201,168,76,0.18);
+}
+.fade-in { animation: fadeInUp 0.8s ease both; }
+
+/* ── Layout helpers ── */
+.page-wrap  { max-width: 1260px; margin: 0 auto; width: 100%; }
+.section-pad { padding: 5rem 3rem; }
+
+/* ── Grid system — mobile-first ── */
+.grid-2,
+.grid-3,
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+/* ── Navbar desktop/mobile toggle ── */
+.desktop-nav     { display: flex; }
+.mobile-menu-btn { display: none; }
+
+/* ══════════════════════════════════════
+   MOBILE  ≤ 640px
+══════════════════════════════════════ */
+@media (max-width: 640px) {
+  :root { --nav-h: 64px; }
+
+  .section-pad  { padding: 4rem 1.2rem 3rem; }
+  .desktop-nav  { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+
+  /* grids stay 1-col on tiny screens */
+  .grid-2, .grid-3, .grid-4 { gap: 1rem; }
+
+  /* hide decorative background diamonds */
+  .bg-diamonds { display: none !important; }
+
+  /* Hero: stack logo on top, text below */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding-top: calc(var(--nav-h) + 1.5rem) !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .hero-grid .hero-logo  { order: -1; }
+  .hero-grid .hero-logo img,
+  .hero-grid .hero-logo > div > img { max-width: 200px !important; }
+  .hero-grid .hero-logo { animation: none !important; }
+
+  /* Stats row: 3 columns compressed */
+  .stats-row { gap: 1rem !important; }
+  .stats-row .stat-num  { font-size: 1.3rem !important; }
+  .stats-row .stat-label { font-size: 0.72rem !important; }
+
+  /* CTA buttons: stack vertically */
+  .cta-row {
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+  }
+  .cta-row a, .cta-row button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* About page: logo under text */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .about-grid .about-logo { order: 1; }
+  .about-grid .about-text { order: 0; }
+
+  /* Gallery category cards: full-width */
+  .gallery-index-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Tab switcher: scroll horizontally */
+  .tab-switcher { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab-switcher > div { min-width: max-content; }
+
+  /* Catalog cards: 1 column */
+  .catalog-grid { grid-template-columns: 1fr !important; }
+
+  /* Past-work photo grid: 2 columns */
+  .photo-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.6rem !important; }
+
+  /* Facebook past-work card */
+  .fb-card { padding: 2rem 1.2rem !important; }
+  .fb-card h2 { font-size: 1.4rem !important; }
+
+  /* General text sizes */
+  .page-title  { font-size: clamp(1.7rem, 7vw, 2.2rem) !important; }
+  .section-title { font-size: clamp(1.4rem, 6vw, 1.8rem) !important; }
+}
+
+/* ══════════════════════════════════════
+   TABLET  641px – 899px
+══════════════════════════════════════ */
+@media (min-width: 641px) and (max-width: 899px) {
+  .section-pad { padding: 4rem 2rem; }
+  .desktop-nav  { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .hero-grid .hero-logo { order: -1; }
+  .hero-grid .hero-logo img { max-width: 260px !important; }
+
+  .about-grid { grid-template-columns: 1fr !important; }
+  .about-grid .about-logo { order: 1; }
+
+  .gallery-index-grid { grid-template-columns: 1fr 1fr !important; }
+  .photo-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+/* ══════════════════════════════════════
+   DESKTOP  ≥ 900px
+══════════════════════════════════════ */
+@media (min-width: 900px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+  .hero-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4rem !important;
+  }
+  .about-grid { grid-template-columns: 1fr 1fr !important; gap: 4rem !important; }
+  .gallery-index-grid { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
+  .photo-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 1rem !important; }
+  .catalog-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 1.5rem !important; }
+}
