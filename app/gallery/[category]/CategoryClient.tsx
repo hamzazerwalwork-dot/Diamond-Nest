@@ -212,7 +212,7 @@ export default function CategoryClient({ category, catalogFiles, workImages }: P
                     </h3>
                     <p style={{ color: "var(--text-muted)", fontFamily: "Cairo, sans-serif", fontSize: "0.78rem", marginBottom: "1rem" }}>{file}</p>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: "0.9rem", borderTop: `1px solid ${meta.accent}18` }}>
-                      <span style={{ color: meta.accent, fontSize: "0.8rem", fontFamily: "Cairo, sans-serif", fontWeight: 500 }}>عرض / تنزيل</span>
+                      <span style={{ color: meta.accent, fontSize: "0.8rem", fontFamily: "Cairo, sans-serif", fontWeight: 500 }}>عرض</span>
                       <div style={{
                         width: 32, height: 32, borderRadius: "8px",
                         background: hovered === idx+200 ? `linear-gradient(135deg, ${meta.accent}, ${meta.accent}BB)` : `${meta.accent}18`,
