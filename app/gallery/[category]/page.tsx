@@ -5,7 +5,7 @@ import CategoryClient from "./CategoryClient";
 const CATEGORIES = [
   "interior-wood-alternative",
   "paquet",
-  "shepherd-tv", label: "شيبورد و خلفيات التيفي"
+  "shepherd-tv",
   "wood-plastic-composite",
 ];
 
