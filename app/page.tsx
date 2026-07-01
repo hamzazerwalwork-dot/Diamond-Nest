@@ -116,7 +116,7 @@ export default function HomePage() {
 
             {/* Phone Numbers */}
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-              {["+966 56 577 4098", "+96656 604 3115"].map((phone, i) => (
+              {["+966 56 577 4098", "+966 56 604 3115"].map((phone, i) => (
                 <a key={i} href={`tel:${phone}`} style={{
                   display: "inline-flex", alignItems: "center", gap: "0.5rem",
                   background: "rgba(201,168,76,0.08)",
