@@ -6,7 +6,7 @@ const categories = [
   { id: "interior-wood-alternative", label: "بديل الخشب الداخلي", labelEn: "Interior Wood Alternative", icon: "🪵", gradient: "linear-gradient(135deg, #1a1810 0%, #2d2a18 60%, #1a1810 100%)", accent: "#C9A84C", desc: "حلول بديلة للخشب الطبيعي بجودة عالية وأسعار تنافسية" },
   { id: "paquet", label: "الباركيه", labelEn: "Parquet", icon: "🏠", gradient: "linear-gradient(135deg, #10181a 0%, #182428 60%, #10181a 100%)", accent: "#7EAFC9", desc: "أرضيات باركيه فاخرة بتصاميم متعددة تناسب كل ذوق" },
   { id: "shepherd-tv", label: "شيبورد و خلفيات التيفي", labelEn: "Shepherd-TV", icon: "📺", gradient: "linear-gradient(135deg, #12101a 0%, #201c2d 60%, #12101a 100%)", accent: "#A87EC9", desc: "تصاميم وحدات التلفزيون والمديا والجدران الخشبية المزخرفة" },
-  { id: "wood-plastic-composite", label: " WPCبديل الخشب الخارجي", labelEn: "Wood Plastic Composite", icon: "🌿", gradient: "linear-gradient(135deg, #101810 0%, #1a2818 60%, #101810 100%)", accent: "#7EC987", desc: "مواد مركّبة بين الخشب والبلاستيك للاستخدام الداخلي والخارجي" },
+  { id: "wood-plastic-composite", label: " بديل الخشب الخارجي WPC", labelEn: "Wood Plastic Composite", icon: "🌿", gradient: "linear-gradient(135deg, #101810 0%, #1a2818 60%, #101810 100%)", accent: "#7EC987", desc: "مواد مركّبة بين الخشب والبلاستيك للاستخدام الداخلي والخارجي" },
 ];
 
 export default function GalleryPage() {
