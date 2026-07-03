@@ -9,7 +9,7 @@ const categoryMeta: Record<string, { label: string; labelEn: string; icon: strin
   "interior-wood-alternative": { label: "بديل الخشب الداخلي", labelEn: "Interior Wood Alternative", icon: "🪵", accent: "#C9A84C", bg: "linear-gradient(135deg, #080806 0%, #0f0d08 40%, #14110a 100%)" },
   "paquet":                    { label: "الباركيه",             labelEn: "Parquet",                  icon: "🏠", accent: "#7EAFC9", bg: "linear-gradient(135deg, #060d10 0%, #0a1418 40%, #0d1c22 100%)" },
   "shepherd-tv":               { label: "شيبورد و خلفيات التيفي",             labelEn: "Shepherd-TV",              icon: "📺", accent: "#A87EC9", bg: "linear-gradient(135deg, #090610 0%, #100c1a 40%, #15102a 100%)" },
-  "wood-plastic-composite":    { label: "بديل خشب خارجي", labelEn: "Wood Plastic Composite", icon: "🌿", accent: "#7EC987", bg: "linear-gradient(135deg, #060a06 0%, #0a100a 40%, #0d160d 100%)" },
+  "wood-plastic-composite":    { label: "بديل خشب خارجي WPC", labelEn: "Wood Plastic Composite", icon: "🌿", accent: "#7EC987", bg: "linear-gradient(135deg, #060a06 0%, #0a100a 40%, #0d160d 100%)" },
 };
 
 interface Props { category: string; catalogFiles: string[]; workImages: string[]; }
